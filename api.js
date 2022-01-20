@@ -5,7 +5,7 @@ const cors = require('cors');
 const api = express();
 const itemRouter = require('./Router/itemRouter')
 const listRouter = require('./Router/listRouter')
-const port = env.process.PORT || 3000
+const port = process.env.PORT || 3000;
 
 api.use(cors());
 

@@ -1,0 +1,30 @@
+require('dotenv').config()
+const express = require('express');
+const bodyparser = require('body-parser');
+const cors = require('cors');
+const api = express();
+const itemRouter = require('./Router/itemRouter')
+const listRouter = require('./Router/listRouter')
+const port = env.process.PORT || 3000
+
+api.use(cors());
+
+api.use(bodyparser.urlencoded({
+    extended: true
+}));
+
+api.use(bodyparser.json());
+
+api.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
+
+// -------------- ROTA --------------
+api.use('/data', itemRouter, listRouter);
+
+
+// -------------- LISTEN -------------
+
+api.listen(port, () => {
+    console.log(`Running API on port ${port}`)
+  })

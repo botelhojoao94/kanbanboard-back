@@ -16,7 +16,7 @@ api.use(bodyparser.urlencoded({
 api.use(bodyparser.json());
 
 api.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('API Running!!')
   })
 
 // -------------- ROTA --------------
